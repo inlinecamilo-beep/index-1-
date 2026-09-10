@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SERVICART - Taller de mecánica automotriz, diagnóstico, electricidad, suspensión, aceites, baterías y repuestos en Mocoa.">
+<title>SERVICART | Taller de Mecánica Automotriz</title>
+<style>
+:root{--red:#ed1c24;--red2:#b90d13;--black:#080a0c;--dark:#121518;--gray:#f2f3f4;--white:#fff;--text:#151719;--muted:#697078;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.5;background:#fff}
+a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}
+.container{width:min(var(--max),92%);margin:auto}
+header{position:sticky;top:0;z-index:100;background:rgba(8,10,12,.97);border-bottom:2px solid var(--red)}
+.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{width:315px}.brand img{width:100%;height:auto}
+nav{display:flex;gap:22px;align-items:center}nav a{color:#fff;font-size:14px;font-weight:800}
+nav a:hover{color:var(--red)}.nav-call{background:var(--red);padding:12px 17px;border-radius:9px}
+.hero{min-height:590px;background:linear-gradient(90deg,rgba(4,6,8,.98),rgba(4,6,8,.86) 46%,rgba(4,6,8,.35)),url("assets/servicart-banner.jpeg") center/cover;display:flex;align-items:center}
+.hero-content{max-width:690px;padding:75px 0}.eyebrow,.section-label{color:var(--red);font-weight:900;text-transform:uppercase;letter-spacing:.7px}
+h1{color:#fff;font-size:clamp(40px,6vw,70px);line-height:1.02;margin:10px 0 20px}
+.hero p{color:#e0e3e6;font-size:20px;max-width:610px;margin-bottom:30px}
+.buttons{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:9px;padding:14px 20px;font-weight:900;cursor:pointer}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:#ff3038}.btn-outline{border:2px solid #fff;color:#fff}.btn-outline:hover{background:#fff;color:#111}
+section{padding:76px 0}.section-title{font-size:clamp(30px,4vw,45px);line-height:1.1;margin:6px 0 30px}
+.services{background:#fff}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#f4f5f6;border:1px solid #e4e6e8;border-radius:13px;padding:25px;transition:.2s}.card:hover{transform:translateY(-4px);box-shadow:0 15px 35px #00000013}
+.icon{font-size:38px;margin-bottom:12px}.card h3{font-size:19px;margin-bottom:7px}.card p{color:var(--muted);font-size:14px}
+.products{background:var(--gray)}.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.product-card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e2e4e6}.product-photo{height:185px;background:linear-gradient(135deg,#202428,#090b0d);display:flex;align-items:center;justify-content:center;color:#fff;font-size:70px}
+.product-body{padding:20px}.tag{display:inline-block;background:#ffe7e8;color:#b40007;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:900;margin-bottom:8px}
+.product-body h3{margin-bottom:7px}.product-body p{color:var(--muted);font-size:14px;margin-bottom:15px}
+.vehicle{background:var(--black);color:#fff}.vehicle-box{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.vehicle h2{font-size:clamp(32px,4vw,50px);line-height:1.05;margin:8px 0 18px}.vehicle-copy{color:#cfd3d6;font-size:17px}
+.selector{background:#fff;color:var(--text);padding:28px;border-radius:15px;box-shadow:0 20px 45px #0005}.selector h3{margin-bottom:18px;font-size:23px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}
+label{font-size:13px;font-weight:800}.field input,.field select,.field textarea{border:1px solid #d7dadd;border-radius:8px;padding:12px;background:#fff;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--red)}
+.quote{background:#fff}.quote-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:45px;align-items:start}
+.info-box{background:var(--black);color:#fff;border-radius:15px;padding:30px}.info-box h3{font-size:27px;margin-bottom:12px}.info-box p{color:#cbd0d4;margin:10px 0}.info-list{list-style:none;margin:20px 0;display:grid;gap:12px}.info-list li{border-left:3px solid var(--red);padding-left:12px}
+.quote-form{background:#f5f6f7;border-radius:15px;padding:30px}.quote-form textarea{min-height:110px;resize:vertical}
+.gallery{background:#111;color:#fff}.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px}.photo-placeholder{min-height:230px;border-radius:12px;background:linear-gradient(135deg,#2a2d31,#090a0b);display:flex;align-items:center;justify-content:center;text-align:center;color:#aeb4b9;padding:20px;border:1px dashed #555}
+.photo-placeholder:first-child{grid-row:span 2;min-height:472px}
+.location{background:var(--gray)}.map-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:25px}.contact-card{background:#fff;border-radius:14px;padding:28px}.contact-card h3{font-size:26px;margin-bottom:15px}.contact-row{padding:13px 0;border-bottom:1px solid #eee}.contact-row strong{display:block}.map{min-height:390px;border-radius:14px;overflow:hidden;background:#ddd}.map iframe{width:100%;height:100%;min-height:390px;border:0}
+.cta{background:linear-gradient(100deg,#080a0c,#1b1e22);color:#fff;text-align:center;border-top:4px solid var(--red);border-bottom:4px solid var(--red)}.cta h2{font-size:clamp(30px,4vw,48px);margin-bottom:10px}.cta p{color:#d0d4d7;margin-bottom:22px}
+footer{background:#080a0c;color:#fff;padding:50px 0 20px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}.footer-logo{width:280px;margin-bottom:12px}.footer-grid p{color:#bfc4c8;margin:7px 0}.bottom{border-top:1px solid #333;margin-top:35px;padding-top:17px;text-align:center;color:#777;font-size:13px}
+.float{position:fixed;right:20px;bottom:20px;z-index:80;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:27px;box-shadow:0 8px 25px #0004}
+@media(max-width:900px){.brand{width:230px}nav a:not(.nav-call){display:none}.service-grid,.product-grid{grid-template-columns:repeat(2,1fr)}.vehicle-box,.quote-grid,.map-wrap,.footer-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr}.photo-placeholder:first-child{grid-row:auto;min-height:250px}}
+@media(max-width:560px){.nav{min-height:70px}.brand{width:200px}.nav-call{padding:9px 11px;font-size:12px}.hero{min-height:520px}.hero-content{padding:50px 0}.hero p{font-size:17px}section{padding:55px 0}.service-grid,.product-grid,.form-grid,.gallery-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.selector,.quote-form,.info-box{padding:20px}.map iframe{min-height:320px}}
+</style>
+</head>
+<body>
+<header>
+<div class="container nav">
+<a class="brand" href="#inicio"><img src="assets/servicart-banner.jpeg" alt="SERVICART"></a>
+<nav>
+<a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#productos">Productos</a><a href="#bateria">Baterías</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a>
+<a class="nav-call" href="tel:+573143601141">📞 Llamar</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="inicio"><div class="container hero-content">
+<div class="eyebrow">Mecánica automotriz</div>
+<h1>Tu vehículo en manos de expertos</h1>
+<p>Diagnóstico, mantenimiento, reparación y repuestos para mantener tu vehículo en las mejores condiciones.</p>
+<div class="buttons"><a class="btn btn-red" href="#cotizar">🔧 Solicitar cotización</a><a class="btn btn-outline" href="https://wa.me/573105558730?text=Hola%20SERVICART,%20quiero%20cotizar%20un%20servicio." target="_blank">💬 WhatsApp</a></div>
+</div></section>
+
+<section class="services" id="servicios"><div class="container">
+<div class="section-label">Nuestros servicios</div><h2 class="section-title">Soluciones para tu vehículo</h2>
+<div class="service-grid">
+<div class="card"><div class="icon">🚗</div><h3>Mecánica automotriz</h3><p>Mantenimiento y reparación de los principales sistemas del vehículo.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Servicio eléctrico</h3><p>Revisión y solución de fallas eléctricas y electrónicas.</p></div>
+<div class="card"><div class="icon">🖥️</div><h3>Scanner</h3><p>Diagnóstico computarizado para detectar fallas.</p></div>
+<div class="card"><div class="icon">🔧</div><h3>Suspensión</h3><p>Revisión y mantenimiento para una conducción segura.</p></div>
+<div class="card"><div class="icon">💧</div><h3>Lavado de inyectores</h3><p>Servicio para apoyar el correcto funcionamiento del sistema de inyección.</p></div>
+<div class="card"><div class="icon">⚙️</div><h3>Mantenimiento preventivo y correctivo</h3><p>Ayudamos a mantener tu vehículo en condiciones adecuadas.</p></div>
+</div></div></section>
+
+<section class="products" id="productos"><div class="container">
+<div class="section-label">Catálogo</div><h2 class="section-title">Aceites, baterías y repuestos</h2>
+<div class="product-grid">
+<div class="product-card"><div class="product-photo">🛢️</div><div class="product-body"><span class="tag">ACEITES</span><h3>Aceites y lubricantes</h3><p>Consulta disponibilidad, marca, viscosidad y presentación.</p><a class="btn btn-red" href="https://wa.me/573105558730?text=Hola%20SERVICART,%20quiero%20consultar%20por%20aceites." target="_blank">Consultar</a></div></div>
+<div class="product-card"><div class="product-photo">🔋</div><div class="product-body"><span class="tag">BATERÍAS</span><h3>Baterías para vehículos</h3><p>Indícanos los datos de tu vehículo para orientarte.</p><a class="btn btn-red" href="#bateria">Buscar batería</a></div></div>
+<div class="product-card"><div class="product-photo">🔩</div><div class="product-body"><span class="tag">REPUESTOS</span><h3>Repuestos</h3><p>Pregunta por disponibilidad y cotiza directamente por WhatsApp.</p><a class="btn btn-red" href="https://wa.me/573105558730?text=Hola%20SERVICART,%20quiero%20consultar%20por%20un%20repuesto." target="_blank">Consultar</a></div></div>
+</div></div></section>
+
+<section class="vehicle" id="bateria"><div class="container vehicle-box">
+<div><div class="section-label">Buscador de batería</div><h2>Encuentra la batería adecuada para tu vehículo</h2><p class="vehicle-copy">Selecciona marca, modelo y año. Luego te enviaremos la consulta a WhatsApp para confirmar compatibilidad y disponibilidad.</p></div>
+<form class="selector" id="batteryForm"><h3>Datos del vehículo</h3><div class="form-grid">
+<div class="field"><label for="make">Marca</label><select id="make" required><option value="">Selecciona</option><option>Chevrolet</option><option>Renault</option><option>Toyota</option><option>Nissan</option><option>Kia</option><option>Hyundai</option><option>Ford</option><option>Volkswagen</option><option>Mazda</option><option>Suzuki</option><option>Otra</option></select></div>
+<div class="field"><label for="model">Modelo</label><input id="model" required placeholder="Ej. Duster, Spark..."></div>
+<div class="field"><label for="year">Año</label><select id="year" required><option value="">Selecciona</option></select></div>
+<div class="field"><label for="engine">Motor (opcional)</label><input id="engine" placeholder="Ej. 1.6"></div>
+<div class="field full"><button class="btn btn-red" type="submit">🔋 Consultar batería por WhatsApp</button></div>
+</div></form>
+</div></section>
+
+<section class="quote" id="cotizar"><div class="container quote-grid">
+<div class="info-box"><h3>Solicita tu cotización</h3><p>Cuéntanos qué necesita tu vehículo y te contactaremos para confirmar el servicio.</p><ul class="info-list"><li>Mecánica y mantenimiento</li><li>Diagnóstico con scanner</li><li>Electricidad y suspensión</li><li>Aceites, baterías y repuestos</li></ul><a class="btn btn-red" href="tel:+573143601141">📞 314 360 1141</a></div>
+<form class="quote-form" id="quoteForm"><div class="section-label">Cotización</div><h2 class="section-title">Cuéntanos qué necesitas</h2><div class="form-grid">
+<div class="field"><label>Nombre</label><input id="qname" required placeholder="Tu nombre"></div>
+<div class="field"><label>Teléfono</label><input id="qphone" required placeholder="Tu teléfono"></div>
+<div class="field"><label>Servicio</label><select id="qservice" required><option value="">Selecciona</option><option>Mecánica</option><option>Electricidad</option><option>Scanner</option><option>Suspensión</option><option>Lavado de inyectores</option><option>Mantenimiento</option><option>Aceites</option><option>Batería</option><option>Repuesto</option><option>Otro</option></select></div>
+<div class="field"><label>Vehículo</label><input id="qcar" placeholder="Marca y modelo"></div>
+<div class="field full"><label>Mensaje</label><textarea id="qmessage" placeholder="Describe brevemente lo que necesita tu vehículo"></textarea></div>
+<div class="field full"><button class="btn btn-red" type="submit">Enviar cotización por WhatsApp</button></div>
+</div></form>
+</div></section>
+
+<section class="gallery" id="galeria"><div class="container"><div class="section-label">Nuestro taller</div><h2 class="section-title">Conoce SERVICART</h2>
+<div class="gallery-grid">
+<div class="photo-placeholder">📸<br>Foto principal del taller</div>
+<div class="photo-placeholder">📸<br>Interior del taller</div>
+<div class="photo-placeholder">📸<br>Equipo de trabajo</div>
+<div class="photo-placeholder">📸<br>Trabajos realizados</div>
+<div class="photo-placeholder">📸<br>Aceites y baterías</div>
+</div>
+<p style="margin-top:16px;color:#aaa">Estas casillas están preparadas para reemplazarlas por las fotografías reales que nos envíes.</p>
+</div></section>
+
+<section class="location" id="contacto"><div class="container"><div class="section-label">Visítanos</div><h2 class="section-title">Contacto y ubicación</h2>
+<div class="map-wrap"><div class="contact-card"><h3>SERVICART</h3>
+<div class="contact-row"><strong>📍 Dirección</strong>Jardines de Babilonia, Los Guaduales, Mocoa, Putumayo</div>
+<div class="contact-row"><strong>📱 WhatsApp</strong><a href="https://wa.me/573105558730" target="_blank">+57 310 555 8730</a></div>
+<div class="contact-row"><strong>📞 Teléfonos</strong><a href="tel:+573143601141">314 360 1141</a> · <a href="tel:+573123300647">312 330 0647</a></div>
+<div class="contact-row"><strong>🕒 Atención</strong>Consulta el horario actualizado por teléfono o WhatsApp.</div>
+<br><a class="btn btn-red" href="https://www.google.com/maps/search/?api=1&query=Servicart%20Ingeautos%20S.A%2C%20Mocoa%2C%20Putumayo" target="_blank">📍 Abrir en Google Maps</a>
+</div>
+<div class="map"><iframe loading="lazy" src="https://www.google.com/maps?q=Servicart%20Ingeautos%20S.A%2C%20Mocoa%2C%20Putumayo&output=embed" allowfullscreen></iframe></div>
+</div></div></section>
+
+<section class="cta"><div class="container"><h2>¿Listo para poner tu vehículo a punto?</h2><p>Habla con SERVICART y solicita información o una cotización.</p><div class="buttons" style="justify-content:center"><a class="btn btn-red" href="tel:+573143601141">📞 Llamar</a><a class="btn btn-outline" href="https://wa.me/573105558730" target="_blank">💬 WhatsApp</a></div></div></section>
+</main>
+
+<footer><div class="container footer-grid">
+<div><img class="footer-logo" src="assets/servicart-banner.jpeg" alt="SERVICART"><p>Mecánica automotriz · Scanner · Electricidad · Suspensión · Mantenimiento · Aceites · Baterías · Repuestos</p></div>
+<div><h3>Contacto</h3><p>WhatsApp: +57 310 555 8730</p><p>314 360 1141</p><p>312 330 0647</p></div>
+<div><h3>Ubicación</h3><p>Jardines de Babilonia, Los Guaduales</p><p>Mocoa, Putumayo</p></div>
+</div><div class="container bottom">© <span id="year"></span> SERVICART · Todos los derechos reservados.</div></footer>
+<a class="float" href="https://wa.me/573105558730" target="_blank" aria-label="WhatsApp">☏</a>
+
+<script>
+const year=document.getElementById('year');year.textContent=new Date().getFullYear();
+const yearSelect=document.getElementById('year');for(let y=new Date().getFullYear();y>=1990;y--){const o=document.createElement('option');o.value=y;o.textContent=y;yearSelect.appendChild(o)}
+function wa(text){window.open('https://wa.me/573105558730?text='+encodeURIComponent(text),'_blank')}
+document.getElementById('batteryForm').addEventListener('submit',e=>{e.preventDefault();const make=document.getElementById('make').value,model=document.getElementById('model').value,yr=document.getElementById('year').value,engine=document.getElementById('engine').value;wa(`Hola SERVICART, quiero consultar una batería. Vehículo: ${make} ${model}, año ${yr}${engine?' , motor '+engine:''}. ¿Qué batería es compatible y qué opciones tienen disponibles?`)});
+document.getElementById('quoteForm').addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('qname').value,p=document.getElementById('qphone').value,s=document.getElementById('qservice').value,c=document.getElementById('qcar').value,m=document.getElementById('qmessage').value;wa(`Hola SERVICART, quiero solicitar una cotización.%0A%0ANombre: ${n}%0ATeléfono: ${p}%0AServicio: ${s}%0AVehículo: ${c}%0AMensaje: ${m}`)});
+</script>
+</body>
+</html>
